@@ -1,3 +1,3 @@
 #!/bin/bash
 chmod u+x ./app/initial/mvnw
-./app/initial/mvnw package
+cd ./app/initial/ && ./app/initial/mvnw package

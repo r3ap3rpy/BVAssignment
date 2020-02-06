@@ -59,3 +59,4 @@ else
 	echo "No login detected aborting!"
 	exit 1
 fi
+docker push $1/spring:$2

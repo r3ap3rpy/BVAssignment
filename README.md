@@ -1,5 +1,11 @@
 ### The BV assignment
 
+Assumptions.
+
+1. You are using CentOS7 
+2. maven package is installed
+3. you are logged in to the public docker registry
+
 The task is described [here](task/DevOpsInterviewTaskSecurity.pdf)
 
 I got 5 requirements to cover in this assignment.

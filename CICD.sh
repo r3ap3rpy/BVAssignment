@@ -45,3 +45,9 @@ else
 fi
 cd ../../
 docker build -t spring .
+if [ "`docker system info | grep -E 'Username|Registry'|wc -l`" -eq "2" ]; then
+	echo "logged in"
+else
+	echo "No login detected aborting!"
+	exit 1
+fi

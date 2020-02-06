@@ -52,7 +52,7 @@ else
 	echo "SEPAUDIT :: PASS" 
 fi
 cd ../../
-docker build -t spring .
+docker build -t $1/spring:$2 .
 if [ "`docker system info | grep -E 'Username|Registry'|wc -l`" -eq "2" ]; then
 	echo "logged in"
 else

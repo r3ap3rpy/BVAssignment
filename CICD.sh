@@ -1,4 +1,12 @@
 #!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+	echo "Illegal number of parameters, you need repo and versioning to use this script!"
+	exit 1
+else
+	echo "Good!"
+fi
+
 chmod u+x ./app/initial/mvnw
 cd ./app/initial/ && ./mvnw package
 

@@ -43,4 +43,5 @@ if test -z "$SEPAUDIT"; then
 else         
 	echo "SEPAUDIT :: PASS" 
 fi
-
+cd ../../
+docker build -t spring .

@@ -22,8 +22,25 @@ fi
 echo "Ensure separate partition exists for /var/tmp (Scored)"
 SEPVAR=`mount | grep /var/tmp`
 if test -z "$SEPVAR" then         
-	echo "SEPVAR :: PASS" 
+	echo "SEPVAR :: FAIL, aborting!"
+	exit 1
 else         
-	echo "SEPVAR :: FAIL, aborting!"         
-	exit 1 
+	echo "SEPVAR :: PASS" 
 fi
+echo "Ensuring separate partition exists for /var/log (Scored)"
+SEPLOG=`mount | grep /var/log`
+if test -z "$SEPLOG" then         
+	echo "SEPLOG :: FAIL, aborting!"         
+	exit 1 
+else         
+	echo "SEPLOG :: PASS" 
+fi
+echo "Ensure separate partition exists for /var/log/audit (Scored)"
+SEPAUDIT=`mount | grep /var/log` 
+if test -z "$SEPAUDIT" then
+	echo "SEPAUDIT :: FAIL, aborting!"         
+	exit 1 
+else         
+	echo "SEPAUDIT :: PASS" 
+fi
+

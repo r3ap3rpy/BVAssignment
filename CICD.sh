@@ -4,7 +4,7 @@ cd ./app/initial/ && ./mvnw package
 
 echo "Ensuring nosuid option set on /tmp partition (Scored)"  
 NOSUID=`mount | grep -E '\s/tmp\s' | grep -v nosuid`
-if test -z "$NOSUID" then      
+if test -z "$NOSUID"; then      
 	echo "NOSUID :: PASS" 
 else       
 	echo "NOSUID :: FAIL, aborting!"       
@@ -13,7 +13,7 @@ fi
 
 echo "Ensure noexec option set on /tmp partition (Scored)"
 NOEXEC=`mount | grep -E '\s/tmp\s' | grep -v noexec`
-if test -z "$NOEXEC" then         
+if test -z "$NOEXEC"; then         
 	echo "NOEXEC :: PASS" 
 else         
 	echo "NOEXEC :: FAIL, aborting!"         
@@ -21,7 +21,7 @@ else
 fi
 echo "Ensure separate partition exists for /var/tmp (Scored)"
 SEPVAR=`mount | grep /var/tmp`
-if test -z "$SEPVAR" then         
+if test -z "$SEPVAR"; then         
 	echo "SEPVAR :: FAIL, aborting!"
 	exit 1
 else         
@@ -29,7 +29,7 @@ else
 fi
 echo "Ensuring separate partition exists for /var/log (Scored)"
 SEPLOG=`mount | grep /var/log`
-if test -z "$SEPLOG" then         
+if test -z "$SEPLOG"; then         
 	echo "SEPLOG :: FAIL, aborting!"         
 	exit 1 
 else         
@@ -37,7 +37,7 @@ else
 fi
 echo "Ensure separate partition exists for /var/log/audit (Scored)"
 SEPAUDIT=`mount | grep /var/log` 
-if test -z "$SEPAUDIT" then
+if test -z "$SEPAUDIT"; then
 	echo "SEPAUDIT :: FAIL, aborting!"         
 	exit 1 
 else         
